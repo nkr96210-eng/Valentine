@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valentine Surprise ❤️</title>
+  <style>
+    body{
+      text-align:center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+      padding-top: 30px;
+    }
+    h1{color:#b30059;}
+    button{
+      padding: 14px 26px;
+      font-size: 18px;
+      margin: 10px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+    }
+    .yes{background:#ff3366;color:white;}
+    .no{background:#fff;color:#333;}
+    #msg{font-size:20px;margin-top:20px;color:#4d0026;}
+    video{
+      width:220px;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.3);
+      margin-bottom:20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>💖 Valentine Gift For Meri Betu 💖</h1>
+<p>Meri Betu, kya tum mera surprise dekhna chahogi? 😍</p>
+
+<button class="yes" onclick="yesClick()">YES 💕</button>
+<button class="no" onclick="noClick()">NO 🙈</button>
+
+<p id="msg"></p>
+
+<script>
+let noCount = 0;
+
+function yesClick(){
+  document.body.innerHTML = `
+  <video autoplay loop muted>
+    <source src="gudda-gudiya.mp4" type="video/mp4">
+  </video>
+
+  <h1>❤️ Meri Betu ❤️</h1>
+  <p style="font-size:22px;">
+    Tum meri zindagi ki sabse special person ho 💖<br><br>
+    Har smile, har moment tumhare saath aur beautiful lagta hai ✨<br><br>
+    — Tumhara Gudda 💌<br><br>
+    Happy Valentine’s Day ❤️
+  </p>
+  `;
+}
+
+function noClick(){
+  noCount++;
+  let questions = [
+    "Ek baar YES bol do na Meri Betu 🥺",
+    "Itna bhi mana nahi karte 😅",
+    "Dil se pooch ke dekho ❤️",
+    "Gudda ka surprise wait kar raha hai 💝"
+  ];
+  document.getElementById("msg").innerText =
+    questions[noCount % questions.length];
+}
+</script>
+
+</body>
+</html>
